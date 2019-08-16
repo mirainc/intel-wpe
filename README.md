@@ -2,6 +2,8 @@
 
 ## Building
 
+The build process is very resource intensive, recommend running on a Docker host with 4-8 cores and >10GB memory.
+
 ```bash
 git submodule update --init
 docker-compose build
@@ -9,6 +11,12 @@ docker-compose run main bash
 
 bash build.sh
 ```
+
+## Resources
+
+General build instructions: https://github.com/Igalia/meta-webkit/wiki/WPE
+
+RPI-specific build instructions, useful as a reference: https://github.com/Igalia/meta-webkit/wiki/RPi
 
 ## Submodules Used
 ```bash
