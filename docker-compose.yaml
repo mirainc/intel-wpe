@@ -1,0 +1,11 @@
+version: '2'
+# volumes:
+services:
+  main: # this is named "main" for now to ease migration to multicontainer.
+    build: .
+    restart: always
+    # privileged: true
+    # network_mode: "host"
+    # command: sleep infinity
+    environment:
+      - DEBIAN_FRONTEND=noninteractive

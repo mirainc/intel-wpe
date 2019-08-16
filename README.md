@@ -1,6 +1,12 @@
 # intel-wpe
 
 ## Building
+
+```bash
+docker-compose build
+docker-compose run main bash
+```
+
 ```bash
 docker run -it -v $(pwd)/:/mount:rw yoctocookbook2ndedition/docker-yocto-builder
 source /mount/poky/oe-init-build-env /mount/build
