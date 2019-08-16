@@ -1,0 +1,20 @@
+[submodule "poky"]
+	path = poky
+	url = https://git.yoctoproject.org/git/poky
+	branch = sumo
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = sumo
+[submodule "meta-gstreamer1.0"]
+	path = meta-gstreamer1.0
+	url = https://github.com/OSSystems/meta-gstreamer1.0
+	branch = sumo
+[submodule "meta-webkit"]
+	path = meta-webkit
+	url = https://github.com/Igalia/meta-webkit
+	branch = sumo
+[submodule "meta-intel"]
+	path = meta-intel
+	url = https://git.yoctoproject.org/git/meta-intel
+	branch = sumo
