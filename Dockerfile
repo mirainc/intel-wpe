@@ -1,5 +1,5 @@
 FROM yoctocookbook2ndedition/docker-yocto-builder
 
-WORKDIR /mount
+WORKDIR /home/build
 
 COPY . .
