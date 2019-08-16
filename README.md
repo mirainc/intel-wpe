@@ -3,23 +3,14 @@
 ## Building
 
 ```bash
+git submodule update --init
 docker-compose build
 docker-compose run main bash
+
+bash build.sh
 ```
 
-```bash
-docker run -it -v $(pwd)/:/mount:rw yoctocookbook2ndedition/docker-yocto-builder
-source /mount/poky/oe-init-build-env /mount/build
-bitbake core-image-weston
-```
-
-Regenerate build conf:
-```
-docker run -it -v $(pwd)/:/mount:rw python:2.7-stretch bash
-cd /mount
-source poky/oe-init-build-env build
-```
-
+## Submodules Used
 ```bash
 git submodule add -b sumo https://git.yoctoproject.org/git/poky
 git submodule add -b sumo https://git.yoctoproject.org/git/meta-yocto
