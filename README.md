@@ -2,13 +2,22 @@
 
 ## Building
 
+The build process is very resource intensive, recommend running on a Docker host with 4-8 cores, >10GB memory, and 32GB free space.
+
+
 ```bash
 git submodule update --init
 docker-compose build
-docker-compose run main bash
+docker-compose run --name intel-wpe_main_build main bash
 
 bash build.sh
 ```
+
+## Resources
+
+General build instructions: https://github.com/Igalia/meta-webkit/wiki/WPE
+
+RPI-specific build instructions, useful as a reference: https://github.com/Igalia/meta-webkit/wiki/RPi
 
 ## Submodules Used
 ```bash
