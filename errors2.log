@@ -1,0 +1,352 @@
+Parsing recipes: 100% |########################################| Time: 0:00:54
+Parsing of 1880 .bb files complete (0 cached, 1880 parsed). 2734 targets, 76 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "1.38.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "ubuntu-16.04"
+TARGET_SYS           = "i586-poky-linux"
+MACHINE              = "qemux86"
+DISTRO               = "poky"
+DISTRO_VERSION       = "2.5.3"
+TUNE_FEATURES        = "m32 i586"
+TARGET_FPU           = ""
+meta                 
+meta-poky            
+meta-yocto-bsp       = "HEAD:5ddf7fff992b065ee512878d2fe65f3e35d818cf"
+meta-oe              
+meta-python          = "HEAD:8760facba1bceb299b3613b8955621ddaa3d4c3f"
+meta-gstreamer1.0    = "HEAD:59dfad71768cf53f7863cbe53432cbb77a25a6ee"
+meta-webkit          = "HEAD:0fd8a2eeb86b97799b22f5e5be03bd8132d8eeda"
+
+NOTE: Fetching uninative binary shim from http://downloads.yoctoproject.org/releases/uninative/2.4/x86_64-nativesdk-libc.tar.bz2;sha256sum=06f91685b782f2ccfedf3070b3ba0fe4a5ba2f0766dad5c9d1642dccf95accd0
+Initialising tasks: 100% |#####################################| Time: 0:00:05
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+
+Keyboard Interrupt, closing down...
+
+
+Second Keyboard Interrupt, stopping...
+
+Execution was interrupted, returning a non-zero exit code.
+build@391e655a2150:~$ exit
+exit
+Miras-MacBook-Pro:intel-wpe aric$ docker rm intel-wpe_main_build
+intel-wpe_main_build
+Miras-MacBook-Pro:intel-wpe aric$ ls
+Dockerfile		docker-compose.yaml	meta-openembedded
+README.md		errors.log		meta-webkit
+build			meta-gstreamer1.0	poky
+build.sh		meta-intel
+Miras-MacBook-Pro:intel-wpe aric$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Miras-MacBook-Pro:intel-wpe aric$ docker images -a
+REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE
+intel-wpe_main                                 latest              588d021c3908        21 minutes ago      1.54GB
+<none>                                         <none>              7b2583b18925        23 minutes ago      1.54GB
+<none>                                         <none>              3f44b253c08e        25 minutes ago      1.54GB
+<none>                                         <none>              7f37577129ec        32 minutes ago      1.54GB
+<none>                                         <none>              50953fb41d4d        3 days ago          1.26GB
+yoctocookbook2ndedition/docker-yocto-builder   latest              27e5e1ac7ce8        2 years ago         1.26GB
+Miras-MacBook-Pro:intel-wpe aric$ docker-compose build
+Building main
+Step 1/3 : FROM yoctocookbook2ndedition/docker-yocto-builder
+ ---> 27e5e1ac7ce8
+Step 2/3 : WORKDIR /home/build
+ ---> Using cache
+ ---> 50953fb41d4d
+Step 3/3 : COPY --chown=build:build . .
+ ---> 3b2802343aba
+Successfully built 3b2802343aba
+Successfully tagged intel-wpe_main:latest
+Miras-MacBook-Pro:intel-wpe aric$ docker-compose run --name intel-wpe_main_build main bash
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+build@6ddd6800beb7:~$ bash build.sh
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-sato
+    meta-toolchain
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
+Parsing recipes: 100% |########################################| Time: 0:00:55
+Parsing of 1866 .bb files complete (0 cached, 1866 parsed). 2718 targets, 73 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "1.38.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "ubuntu-16.04"
+TARGET_SYS           = "i586-poky-linux"
+MACHINE              = "qemux86"
+DISTRO               = "poky"
+DISTRO_VERSION       = "2.5.3"
+TUNE_FEATURES        = "m32 i586"
+TARGET_FPU           = ""
+meta                 
+meta-poky            
+meta-yocto-bsp       = "HEAD:5ddf7fff992b065ee512878d2fe65f3e35d818cf"
+meta-oe              
+meta-python          = "HEAD:8760facba1bceb299b3613b8955621ddaa3d4c3f"
+meta-webkit          = "HEAD:0fd8a2eeb86b97799b22f5e5be03bd8132d8eeda"
+
+NOTE: Fetching uninative binary shim from http://downloads.yoctoproject.org/releases/uninative/2.4/x86_64-nativesdk-libc.tar.bz2;sha256sum=06f91685b782f2ccfedf3070b3ba0fe4a5ba2f0766dad5c9d1642dccf95accd0
+Initialising tasks: 100% |#####################################| Time: 0:00:05
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+WARNING: mesa-2_17.3.8-r0 do_fetch: Failed to fetch URL https://mesa.freedesktop.org/archive/mesa-17.3.8.tar.xz, attempting MIRRORS if available
+ERROR: wpewebkit-2.22.5-r0 do_configure: Function failed: do_configure (log file is located at /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/temp/log.do_configure.60523)
+ERROR: Logfile of failure stored in: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/temp/log.do_configure.60523
+Log data follows:
+| DEBUG: Executing shell function do_configure
+| -- The C compiler identification is GNU 7.3.0
+| -- The CXX compiler identification is GNU 7.3.0
+| -- Check for working C compiler: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/i586-poky-linux/i586-poky-linux-gcc
+| -- Check for working C compiler: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/i586-poky-linux/i586-poky-linux-gcc -- works
+| -- Detecting C compiler ABI info
+| -- Detecting C compiler ABI info - done
+| -- Detecting C compile features
+| -- Detecting C compile features - done
+| -- Check for working CXX compiler: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/i586-poky-linux/i586-poky-linux-g++
+| -- Check for working CXX compiler: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/i586-poky-linux/i586-poky-linux-g++ -- works
+| -- Detecting CXX compiler ABI info
+| -- Detecting CXX compiler ABI info - done
+| -- Detecting CXX compile features
+| -- Detecting CXX compile features - done
+| CMake Warning at CMakeLists.txt:16 (message):
+|   No CMAKE_BUILD_TYPE value specified, defaulting to RelWithDebInfo.
+| 
+| 
+| -- Found Gperf: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/gperf (Required is at least version "3.0.1")
+| -- Found Perl: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/perl-native/perl (found suitable version "5.24.1", minimum required is "5.10.0")
+| -- Found PerlModules_JSON::PP: TRUE
+| -- Found PerlModules: TRUE  found components:  JSON::PP
+| -- Found PythonInterp: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/python-native/python2.7 (found suitable version "2.7.15", minimum required is "2.7.0")
+| -- Found Ruby: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/ruby (found suitable version "2.5.0", minimum required is "1.9")
+| -- Performing Test C_COMPILER_SUPPORTS_-fno-strict-aliasing
+| -- Performing Test C_COMPILER_SUPPORTS_-fno-strict-aliasing - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-strict-aliasing
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-strict-aliasing - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-fno-exceptions
+| -- Performing Test C_COMPILER_SUPPORTS_-fno-exceptions - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-exceptions
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-exceptions - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-rtti
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fno-rtti - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_CXX14
+| -- Performing Test CXX_COMPILER_SUPPORTS_CXX14 - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-std=c++14
+| -- Performing Test CXX_COMPILER_SUPPORTS_-std=c++14 - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wall
+| -- Performing Test C_COMPILER_SUPPORTS_-Wall - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wextra
+| -- Performing Test C_COMPILER_SUPPORTS_-Wextra - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wcast-align
+| -- Performing Test C_COMPILER_SUPPORTS_-Wcast-align - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wformat-security
+| -- Performing Test C_COMPILER_SUPPORTS_-Wformat-security - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wmissing-format-attribute
+| -- Performing Test C_COMPILER_SUPPORTS_-Wmissing-format-attribute - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wpointer-arith
+| -- Performing Test C_COMPILER_SUPPORTS_-Wpointer-arith - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wundef
+| -- Performing Test C_COMPILER_SUPPORTS_-Wundef - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wwrite-strings
+| -- Performing Test C_COMPILER_SUPPORTS_-Wwrite-strings - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wall
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wall - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wextra
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wextra - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wcast-align
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wcast-align - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wformat-security
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wformat-security - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wmissing-format-attribute
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wmissing-format-attribute - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wpointer-arith
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wpointer-arith - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wundef
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wundef - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wwrite-strings
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wwrite-strings - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Qunused-arguments
+| -- Performing Test C_COMPILER_SUPPORTS_-Qunused-arguments - Failed
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-maybe-uninitialized
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-maybe-uninitialized - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-noexcept-type
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-noexcept-type - Failed
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-parentheses-equality
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-parentheses-equality - Failed
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Qunused-arguments
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Qunused-arguments - Failed
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-maybe-uninitialized
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-maybe-uninitialized - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-noexcept-type
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-noexcept-type - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-parentheses-equality
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-parentheses-equality - Failed
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-attributes
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-attributes - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-expansion-to-defined
+| -- Performing Test C_COMPILER_SUPPORTS_-Wno-expansion-to-defined - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-expansion-to-defined
+| -- Performing Test CXX_COMPILER_SUPPORTS_-Wno-expansion-to-defined - Success
+| -- Performing Test C_COMPILER_SUPPORTS_-fcolor-diagnostics
+| -- Performing Test C_COMPILER_SUPPORTS_-fcolor-diagnostics - Failed
+| -- Performing Test C_COMPILER_SUPPORTS_-fdiagnostics-color=always
+| -- Performing Test C_COMPILER_SUPPORTS_-fdiagnostics-color=always - Success
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fcolor-diagnostics
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fcolor-diagnostics - Failed
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fdiagnostics-color=always
+| -- Performing Test CXX_COMPILER_SUPPORTS_-fdiagnostics-color=always - Success
+| -- Performing Test ATOMIC_INT64_IS_BUILTIN
+| -- Performing Test ATOMIC_INT64_IS_BUILTIN - Success
+| -- Looking for features.h
+| -- Looking for features.h - found
+| -- Looking for errno.h
+| -- Looking for errno.h - found
+| -- Looking for langinfo.h
+| -- Looking for langinfo.h - found
+| -- Looking for sys/mman.h
+| -- Looking for sys/mman.h - found
+| -- Looking for pthread_np.h
+| -- Looking for pthread_np.h - not found
+| -- Looking for strings.h
+| -- Looking for strings.h - found
+| -- Looking for sys/param.h
+| -- Looking for sys/param.h - found
+| -- Looking for sys/time.h
+| -- Looking for sys/time.h - found
+| -- Looking for sys/timeb.h
+| -- Looking for sys/timeb.h - found
+| -- Looking for _aligned_malloc
+| -- Looking for _aligned_malloc - not found
+| -- Looking for IsDebuggerPresent
+| -- Looking for IsDebuggerPresent - not found
+| -- Looking for localtime_r
+| -- Looking for localtime_r - found
+| -- Looking for strnstr
+| -- Looking for strnstr - not found
+| -- Looking for timegm
+| -- Looking for timegm - found
+| -- Looking for vasprintf
+| -- Looking for vasprintf - found
+| -- Looking for regexec
+| -- Looking for regexec - found
+| -- Looking for SIGTRAP
+| -- Looking for SIGTRAP - found
+| -- Performing Test HAVE_STAT_BIRTHTIME_value
+| -- Performing Test HAVE_STAT_BIRTHTIME_value - Failed
+| -- Performing Test HAVE_TM_GMTOFF_value
+| -- Performing Test HAVE_TM_GMTOFF_value - Success
+| -- Performing Test HAVE_TM_ZONE_value
+| -- Performing Test HAVE_TM_ZONE_value - Success
+| -- Looking for sys/types.h
+| -- Looking for sys/types.h - found
+| -- Looking for stdint.h
+| -- Looking for stdint.h - found
+| -- Looking for stddef.h
+| -- Looking for stddef.h - found
+| -- Check size of __int128_t
+| -- Check size of __int128_t - failed
+| -- Found PkgConfig: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot-native/usr/bin/pkg-config (found version "0.29.2")
+| -- Found Cairo: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/cairo (found suitable version "1.14.12", minimum required is "1.10.2")
+| -- Checking for module 'fontconfig'
+| --   Found fontconfig, version 2.12.6
+| -- Found Fontconfig: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libfontconfig.so (Required is at least version "2.8.0")
+| -- Checking for module 'freetype2'
+| --   Found freetype2, version 22.0.16
+| -- Found Freetype2: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/freetype2/freetype;/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/freetype2 (Required is at least version "2.4.2")
+| -- Found GLIB: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/glib-2.0;/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/glib-2.0/include (found suitable version "2.54.3", minimum required is "2.40.0")
+| -- Found Harfbuzz: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/harfbuzz (found version "1.7.5")
+| -- Checking for module 'icu-uc'
+| --   Found icu-uc, version 60.2
+| -- Checking for module 'icu-i18n'
+| --   Found icu-i18n, version 60.2
+| -- Found ICU header files in /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include
+| -- Found ICU libraries: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libicuuc.so
+| -- Found ICU internationaliation libraries: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libicui18n.so
+| -- Found ICU data libraries: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libicudata.so
+| -- Found JPEG: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libjpeg.so
+| -- Found LibEpoxy: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include (found suitable version "1.5.0", minimum required is "1.4.0")
+| ERROR: /usr/bin/libgcrypt-config should not be used, use an alternative such as pkg-config
+| -- Found LibGcrypt: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libgcrypt.so (found suitable version "1.8.2", minimum required is "1.6.0")
+| -- Found LibSoup: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/libsoup-2.4 (found suitable version "2.60.3", minimum required is "2.42.0")
+| -- Found LibXml2: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libxml2.so (found suitable version "2.9.7", minimum required is "2.8.0")
+| -- Found ZLIB: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libz.so (found version "1.2.11")
+| -- Found PNG: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libpng.so (found version "1.6.34")
+| -- Checking for module 'sqlite3'
+| --   Found sqlite3, version 3.22.0
+| -- Found Sqlite: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include
+| -- Looking for pthread.h
+| -- Looking for pthread.h - found
+| -- Looking for pthread_create
+| -- Looking for pthread_create - not found
+| -- Looking for pthread_create in pthreads
+| -- Looking for pthread_create in pthreads - not found
+| -- Looking for pthread_create in pthread
+| -- Looking for pthread_create in pthread - found
+| -- Found Threads: TRUE
+| -- Found WebP: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include;/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include
+| -- Found WPE: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include/wpe-0.2
+| -- Checking for module 'libwoff2dec'
+| --   Found libwoff2dec, version 1.0.2
+| -- Found WOFF2Dec: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/include (found suitable version "1.0.2", minimum required is "1.0.2")
+| -- Checking for module 'libtasn1'
+| --   Found libtasn1, version 4.13
+| -- Found Libtasn1: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libtasn1.so
+| -- Found LibXslt: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/recipe-sysroot/usr/lib/libxslt.so (found suitable version "1.1.32", minimum required is "1.1.7")
+| -- Checking for module 'gstreamer-1.0 >= 1.8.3'
+| --   Found gstreamer-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-base-1.0 >= 1.8.3'
+| --   Found gstreamer-base-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-app-1.0 >= 1.8.3'
+| --   Found gstreamer-app-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-audio-1.0 >= 1.8.3'
+| --   Found gstreamer-audio-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-fft-1.0 >= 1.8.3'
+| --   Found gstreamer-fft-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-gl-1.0 >= 1.8.3'
+| --   Found gstreamer-gl-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-mpegts-1.0>=1.4.0'
+| --   Found gstreamer-mpegts-1.0, version 1.12.4
+| -- Checking for module 'gstreamer-pbutils-1.0 >= 1.8.3'
+| --   Found gstreamer-pbutils-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-tag-1.0 >= 1.8.3'
+| --   Found gstreamer-tag-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-video-1.0 >= 1.8.3'
+| --   Found gstreamer-video-1.0 , version 1.12.4
+| -- Checking for module 'gstreamer-codecparsers-1.0 >= 1.8.3'
+| --   Found gstreamer-codecparsers-1.0 , version 1.12.4
+| -- Found GStreamer: GSTREAMER_INCLUDE_DIRS;GSTREAMER_LIBRARIES;GSTREAMER_VERSION;GSTREAMER_BASE_INCLUDE_DIRS;GSTREAMER_BASE_LIBRARIES;GSTREAMER_APP_INCLUDE_DIRS;GSTREAMER_APP_LIBRARIES;GSTREAMER_PBUTILS_INCLUDE_DIRS;GSTREAMER_PBUTILS_LIBRARIES;GSTREAMER_VIDEO_INCLUDE_DIRS;GSTREAMER_VIDEO_LIBRARIES;GSTREAMER_MPEGTS_INCLUDE_DIRS;GSTREAMER_MPEGTS_LIBRARIES;GSTREAMER_TAG_INCLUDE_DIRS;GSTREAMER_TAG_LIBRARIES;GSTREAMER_GL_INCLUDE_DIRS;GSTREAMER_GL_LIBRARIES;GSTREAMER_AUDIO_INCLUDE_DIRS;GSTREAMER_AUDIO_LIBRARIES;GSTREAMER_FFT_INCLUDE_DIRS;GSTREAMER_FFT_LIBRARIES (Required is at least version "1.8.3")
+| CMake Error at Source/cmake/GStreamerChecks.cmake:50 (message):
+|   GStreamer 1.14 is needed for ENABLE_MEDIA_SOURCE.
+| Call Stack (most recent call first):
+|   Source/cmake/OptionsWPE.cmake:144 (include)
+|   Source/cmake/WebKitCommon.cmake:61 (include)
+|   CMakeLists.txt:156 (include)
+| 
+| 
+| -- Configuring incomplete, errors occurred!
+| See also "/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/build/CMakeFiles/CMakeOutput.log".
+| See also "/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/build/CMakeFiles/CMakeError.log".
+| WARNING: /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/temp/run.do_configure.60523:1 exit 1 from 'cmake -G Ninja -DCMAKE_MAKE_PROGRAM=ninja $oecmake_sitefile /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/wpewebkit-2.22.5 -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_BINDIR:PATH=bin -DCMAKE_INSTALL_SBINDIR:PATH=sbin -DCMAKE_INSTALL_LIBEXECDIR:PATH=libexec -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc -DCMAKE_INSTALL_SHAREDSTATEDIR:PATH=../com -DCMAKE_INSTALL_LOCALSTATEDIR:PATH=/var -DCMAKE_INSTALL_LIBDIR:PATH=lib -DCMAKE_INSTALL_INCLUDEDIR:PATH=include -DCMAKE_INSTALL_DATAROOTDIR:PATH=share -DCMAKE_INSTALL_SO_NO_EXE=0 -DCMAKE_TOOLCHAIN_FILE=/home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/toolchain.cmake -DCMAKE_VERBOSE_MAKEFILE=1 -DCMAKE_NO_SYSTEM_FROM_IMPORTED=1 -DPORT=WPE -DENABLE_ACCELERATED_2D_CANVAS=OFF -DENABLE_DEVICE_ORIENTATION=OFF -DENABLE_ENCRYPTED_MEDIA=OFF -DENABLE_FETCH_API=ON -DENABLE_GAMEPAD=OFF -DENABLE_GEOLOCATION=OFF -DUSE_GSTREAMER_GL=ON -DENABLE_INDEXED_DATABASE=ON -DENABLE_MEDIA_SOURCE=ON -DENABLE_REMOTE_INSPECTOR=ON -DENABLE_VIDEO=ON -DENABLE_VIDEO_TRACK=ON -DENABLE_WEB_AUDIO=ON -DENABLE_WEB_CRYPTO=ON -DENABLE_WEB_RTC=OFF -DUSE_WOFF2=ON -Wno-dev'
+| ERROR: Function failed: do_configure (log file is located at /home/build/build/tmp/work/i586-poky-linux/wpewebkit/2.22.5-r0/temp/log.do_configure.60523)
+ERROR: Task (/home/build/meta-webkit/recipes-browser/wpewebkit/wpewebkit_2.22.5.bb:do_configure) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 4440 tasks of which 5 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/build/meta-webkit/recipes-browser/wpewebkit/wpewebkit_2.22.5.bb:do_configure
+Summary: There was 1 WARNING message shown.
+Summary: There was 1 ERROR message shown, returning a non-zero exit code.
+build@6ddd6800beb7:~$ 
+
