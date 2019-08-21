@@ -18,3 +18,7 @@
 	path = meta-intel
 	url = https://git.yoctoproject.org/git/meta-intel
 	branch = sumo
+[submodule "openembedded-core"]
+	path = openembedded-core
+	url = git://git.openembedded.org/openembedded-core
+	branch = sumo
