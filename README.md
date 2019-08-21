@@ -2,7 +2,9 @@
 
 ## Building
 
-The build process is very resource intensive, recommend running on a Docker host with 4-8 cores, >10GB memory, and 32GB free space.
+The build process is very resource intensive, recommend running on a Docker host with 4-8 cores, >10GB memory, and 32GB free space. 
+
+On an 8-core i7 Macbook Pro 2015, the build takes about 4hrs.
 
 
 ```bash
