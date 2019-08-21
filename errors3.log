@@ -1,0 +1,47 @@
+Parsing recipes: 100% |########################################| Time: 0:00:56
+Parsing of 1880 .bb files complete (0 cached, 1880 parsed). 2734 targets, 76 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "1.38.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "ubuntu-16.04"
+TARGET_SYS           = "i586-poky-linux"
+MACHINE              = "qemux86"
+DISTRO               = "poky"
+DISTRO_VERSION       = "2.5.3"
+TUNE_FEATURES        = "m32 i586"
+TARGET_FPU           = ""
+meta                 
+meta-poky            
+meta-yocto-bsp       = "HEAD:5ddf7fff992b065ee512878d2fe65f3e35d818cf"
+meta-oe              
+meta-python          = "HEAD:8760facba1bceb299b3613b8955621ddaa3d4c3f"
+meta-gstreamer1.0    = "HEAD:59dfad71768cf53f7863cbe53432cbb77a25a6ee"
+meta-webkit          = "HEAD:0fd8a2eeb86b97799b22f5e5be03bd8132d8eeda"
+
+NOTE: Fetching uninative binary shim from http://downloads.yoctoproject.org/releases/uninative/2.4/x86_64-nativesdk-libc.tar.bz2;sha256sum=06f91685b782f2ccfedf3070b3ba0fe4a5ba2f0766dad5c9d1642dccf95accd0
+Initialising tasks: 100% |#####################################| Time: 0:00:06
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+WARNING: mesa-2_17.3.8-r0 do_fetch: Failed to fetch URL https://mesa.freedesktop.org/archive/mesa-17.3.8.tar.xz, attempting MIRRORS if available
+ERROR: core-image-weston-1.0-r0 do_rootfs: Could not invoke dnf. Command '/home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/recipe-sysroot-native/usr/bin/dnf -y -c /home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/rootfs/etc/dnf/dnf.conf --setopt=reposdir=/home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/rootfs/etc/yum.repos.d --repofrompath=oe-repo,/home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/oe-rootfs-repo --installroot=/home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/rootfs --setopt=logdir=/home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/temp --nogpgcheck install locale-base-en-us locale-base-en-gb dnf cog psplash packagegroup-core-ssh-dropbear weston-examples gtk+3-demo weston-init wpewebkit packagegroup-core-boot run-postinsts matchbox-terminal packagegroup-base-extended libclutter-1.0-examples weston weston-xwayland rpm' returned 1:
+Added oe-repo repo from /home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/oe-rootfs-repo
+Last metadata expiration check: 0:00:01 ago on Wed 21 Aug 2019 02:36:56 AM UTC.
+Error: 
+ Problem: package libwpebackend-mesa0-git-r0.i586 requires libWPEBackend-0.1.so.0, but none of the providers can be installed
+  - package wpewebkit-2.22.5-r0.i586 conflicts with wpebackend < 1.0 provided by libwpebackend-0.1-0-0.2.0-r0.i586
+  - package cog-0.2.0-r0.i586 requires virtual/wpebackend, but none of the providers can be installed
+  - conflicting requests
+(try to add '--allowerasing' to command line to replace conflicting packages or '--skip-broken' to skip uninstallable packages)
+
+ERROR: core-image-weston-1.0-r0 do_rootfs: Function failed: do_rootfs
+ERROR: Logfile of failure stored in: /home/build/build/tmp/work/qemux86-poky-linux/core-image-weston/1.0-r0/temp/log.do_rootfs.30539
+ERROR: Task (/home/build/poky/meta/recipes-graphics/images/core-image-weston.bb:do_rootfs) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 5559 tasks of which 5 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/build/poky/meta/recipes-graphics/images/core-image-weston.bb:do_rootfs
+Summary: There was 1 WARNING message shown.
+Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
+build@0d43a6fb2a79:~$ 
