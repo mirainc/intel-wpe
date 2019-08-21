@@ -18,3 +18,7 @@
 	path = meta-intel
 	url = https://git.yoctoproject.org/git/meta-intel
 	branch = sumo
+[submodule "meta-security"]
+	path = meta-security
+	url = git://git.yoctoproject.org/meta-security
+	branch = sumo
